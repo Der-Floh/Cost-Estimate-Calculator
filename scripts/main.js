@@ -74,7 +74,11 @@ function onClickCalcButton() {
 function updateCorrInputs() {
     devCheckInput.value = ((+devInput.value) * 0.1).toFixed(2);
     devTestInput.value = ((+devInput.value) * 0.1).toFixed(2);
+    if (+devTestInput.value < 1)
+        devTestInput.value = 1;
     custProvInput.value = ((+devInput.value) * 0.05).toFixed(2);
+    if (+custProvInput.value < 1)
+        custProvInput.value = 1;
 }
 
 function calcResult() {
