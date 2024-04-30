@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cost-Estimate-Calculator</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" />
+  <script type="text/javascript" src="scripts/main.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="dev-container">
+        <label>Entwicklung</label>
+        <input type="number" id="dev-input" value="0" min="0" oninput="onInputDev(event)"/>
+    </div>
+    <div id="dev-puffer-container">
+        <label>Entwicklung Puffer</label>
+        <input type="number" id="dev-puffer-input" value="0" min="0" oninput="onInputDevPuffer(event)"/>
+    </div>
+    <div id="dev-check-container">
+        <label>Code Review (10% der Entwicklung)</label>
+        <input type="number" id="dev-check-input" value="0" min="0" oninput="onInputDevCheck(event)"/>
+    </div>
+    <div id="dev-test-container">
+        <label>Interner Test (min. 1h, 10% der Entwicklung)</label>
+        <input type="number" id="dev-test-input" value="0" min="0" oninput="onInputDevTest(event)"/>
+    </div>
+    <div id="dev-doc-container">
+        <label>Interne Dokumentation (optional)</label>
+        <input type="number" id="dev-doc-input" value="0" min="0" oninput="onInputDevDoc(event)"/>
+    </div>
+    <div id="cust-prov-container">
+        <label>Bereitstellung Test (min. 1h, 5% der Entwicklung)</label>
+        <input type="number" id="cust-prov-input" value="0" min="0" oninput="onInputCustProv(event)"/>
+    </div>
+    <div id="cust-del-container">
+        <label>Übergabe an Kunden (optional, min 1h)</label>
+        <input type="number" id="cust-del-input" value="0" min="0" oninput="onInputCustDel(event)"/>
+    </div>
+    <div id="cust-gar-container">
+        <label>Garantiezuschlag (bei Festpreis)</label>
+        <input type="number" id="cust-gar-input" value="0" min="0" oninput="onInputCustGar(event)"/>
+    </div>
+    <br/>
+    <div id="result-container">
+        <p>Ergebnis</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" id="result-input" value="0" min="0" readonly/>
+    </div>
+    <br/>
+    <br/>
+    <div id="lock-container">
+        <input type="checkbox" id="lock-input" name="lock-input" checked oninput="onInputLockCalc(event)"/>
+        <label id="lock-label" for="lock-input">Automatisches aktualisieren der Felder</label>
+    </div>
+    <button id="calc-button" onclick="onClickCalcButton()">Aktualisieren</button>
+  </div>
+</body>
+
+</html>

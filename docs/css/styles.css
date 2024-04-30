@@ -1,0 +1,22 @@
+#container > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#container label {
+    width: 300px;
+    margin-right: 10px;
+}
+
+#container input[type="number"] {
+    flex-grow: 1;
+}
+
+#result-container {
+    display: block;
+}
+
+#lock-input, #lock-label, #calc-button {
+    cursor: pointer;
+}
